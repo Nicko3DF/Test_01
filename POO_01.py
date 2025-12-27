@@ -74,5 +74,79 @@ print(victor.sexo)
 print(victor.pais)
 print("%%%%%%%%%%")
 
+'''
+Notar que, en el primer caso, para acceder a un elemento, fue 
+necesario colocar "Clase.objeto", pues en dicha oportunidad
+se creo primero la clase con todos los objetos, en cambio
+en el 2do caso, se creo un "molde vacio" y luego se agregaron
+atributos a los objetos y ahi radica la diferencia en
+como se accede a dichos elementos
+'''
+
+
 ## -------- ## Metodos ## -------- ##
 
+'''
+Metodo es:
+- Funcion dentro de una clase
+- Determina una accion o comportamiento (y se crean nombres
+acorde a eso)
+- Self ayuda a referirse al mismo objeto
+'''
+
+class Matematica:
+
+    def suma(self):
+
+        self.n1 = 2
+        self.n2 = 3
+
+s = Matematica()
+
+#El objeto s usara el metodo suma
+s.suma()
+print(s.n1 + s.n2)
+
+'''
+El init ayuda a colocar los atributos cuando se inicia
+el objeto, evitando asi los problemas de "setear" 
+manualmente linea a linea los valores, se recuerda que antes
+se hizo
+
+victor = nombre()
+.
+.
+.
+victor.edad = 30
+victor.sexo = "masculino"
+victor.pais = 'bolivia'
+
+con el init se pasa al metodo ("funcion"), directamente
+los parametros o atributos (caracteristicas del objeto)
+
+'''
+
+class Ropa:
+    def __init__(self):
+        self.marca = 'willow'
+        self.talla = 'M'
+        self.color = 'rojo'
+
+camisa = Ropa()
+
+print(camisa.talla)
+
+class Calculadora:
+
+# Asi le decimos que el metodo trabajara con las variables
+# auxiliares n1 y n2
+    def __init__(self,n1,n2):
+        
+        self.suma = n1 + n2
+        self.resta = n1 - n2
+        self.multiplicacion = n1 * n2
+        self.division = n1 / n2
+    
+operacion = Calculadora(2,3)
+
+print(operacion.suma)
